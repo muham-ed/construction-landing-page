@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة البناء المتحد | مقاولات وتشييد</title>
+    <!-- Font Awesome للايقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: خط عربي عصري (Cairo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Variables */
+        :root {
+            --primary: #c49b3f;    /* لون ذهبي/نحاسي فاخر */
+            --secondary: #2c3e50;  /* أزرق داكن/كحلي */
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --white: #ffffff;
+            --gray: #7f8c8d;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/159306/construction-site-build-architecture-159306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat fixed;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .header-content h1 span {
+            color: var(--primary);
+        }
+
+        .header-content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            flex: 1;
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-item h4 {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .stat-item p {
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Services Section */
+        .services-section {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, var(--secondary), transparent);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            transition: 0.5s;
+        }
+
+        .project-item:hover .project-overlay {
+            bottom: 0;
+        }
+
+        .project-item:hover img {
+            transform: scale(1.2);
+        }
+
+        .project-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .project-overlay p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Contact Section (WhatsApp) */
+        .contact-section {
+            background: var(--secondary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-section .section-title {
+            color: var(--white);
+        }
+
+        .contact-section .section-title::after {
+            background: var(--white);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 60px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            border: none;
+        }
+
+        .whatsapp-btn i {
+            font-size: 2rem;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05) translateY(-5px);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* Responsive (Mobile) */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            .header-content p {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .about-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .whatsapp-btn {
+                font-size: 1.2rem;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 50px 15px;
+            }
+            .header-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / الصفحة الرئيسية -->
+    <header>
+        <div class="header-content">
+            <h1>شركة <span>البناء المتحد</span></h1>
+            <p>نبني المستقبل بأيدٍ أمينة ... تميز وإنشاء منذ 1990</p>
+            <a href="#services" class="btn">استعرض خدماتنا</a>
+        </div>
+    </header>
+
+    <!-- About / نبذة عن الشركة -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">نبذة عن الشركة</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>أكثر من 30 عاماً من الإبداع</h3>
+                    <p>تأسست شركة البناء المتحد عام 1990، ومنذ ذلك الحين ونحن نضع معايير جديدة في عالم المقاولات والبناء. نفخر بتقديم حلول متكاملة تجمع بين الفخامة والجودة والالتزام بالمواعيد.</p>
+                    <p>نمتلك فريقاً من أمهر المهندسين والفنيين، ونستخدم أحدث التقنيات لضمان تقديم أفضل النتائج لعملائنا الكرام.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-building"></i>
+                            <h4>500+</h4>
+                            <p>مشروع مكتمل</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-smile"></i>
+                            <h4>450+</h4>
+                            <p>عميل سعيد</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <h4>25+</h4>
+                            <p>جائزة تميز</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <!-- صورة من Pexels (حقوق حرة) -->
+                    <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="عن الشركة">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / الخدمات -->
+    <section class="section services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا المميزة</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>تشييد المباني</h3>
+                    <p>بناء الفلل والقصور والمجمعات السكنية بأعلى المواصفات الهندسية.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-city"></i>
+                    <h3>المباني التجارية</h3>
+                    <p>تشييد الأبراج والمراكز التجارية والمجمعات الإدارية الحديثة.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-road"></i>
+                    <h3>البنية التحتية</h3>
+                    <p>تنفيذ مشاريع الطرق والجسور وشبكات المياه والصرف الصحي.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-paint-roller"></i>
+                    <h3>التصميم الداخلي</h3>
+                    <p>تصميم وتنفيذ ديكورات داخلية عصرية وفاخرة تناسب ذوقك.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>استشارات هندسية</h3>
+                    <p>تقديم الاستشارات الهندسية والإشراف على المشاريع.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>صيانة عامة</h3>
+                    <p>خدمات صيانة متكاملة للمنشآت السكنية والتجارية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / المشاريع السابقة -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">من أحدث مشاريعنا</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="برج سكني">
+                    <div class="project-overlay">
+                        <h3>برج النخبة</h3>
+                        <p>برج سكني تجاري - 30 طابق</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="فيلا فاخرة">
+                    <div class="project-overlay">
+                        <h3>فلل السعادة</h3>
+                        <p>مجمع فلل فاخرة - 50 فيلا</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="مول تجاري">
+                    <div class="project-overlay">
+                        <h3>مول المدينة</h3>
+                        <p>مركز تجاري ترفيهي</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.pexels.com/photos/209251/pexels-photo-209251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="جسر">
+                    <div class="project-overlay">
+                        <h3>جسر النور</h3>
+                        <p>أطول جسر معلق في المنطقة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / نموذج تواصل واتساب -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا فوراً</h2>
+            <div class="contact-content">
+                <p>لديك استفسار أو تريد عرض سعر؟ تواصل معنا عبر الواتساب وسنرد عليك خلال دقائق.</p>
+                <!-- رابطة واتساب مع رسالة افتراضية (يجب تغيير الرقم) -->
+                <a href="https://wa.me/966500000000?text=السلام%20عليكم%2C%20أريد%20استفساراً%20عن%20خدمات%20البناء" 
+                   target="_blank" 
+                   class="whatsapp-btn btn">
+                    <i class="fab fa-whatsapp"></i> 
+                    تواصل عبر واتساب
+                </a>
+                <p style="margin-top: 20px; font-size: 0.9rem;">*الضغط على الزر يفتح محادثة واتساب مباشرة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 شركة البناء المتحد. جميع الحقوق محفوظة.</p>
+            <p style="margin-top: 10px; color: var(--gray);">الهاتف: +966 50 000 0000 | البريد: info@united-construction.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
